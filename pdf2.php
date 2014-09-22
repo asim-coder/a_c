@@ -14,7 +14,7 @@ function Header()
     $this->SetX((210-$w)/2);
     // Colors of frame, background and text
     $this->SetDrawColor(0,80,180);
-    $this->SetFillColor(230,230,0);
+    $this->SetFillColor(230,230,230);
     $this->SetTextColor(220,50,50);
     // Thickness of frame (1 mm)
     $this->SetLineWidth(1);
@@ -43,7 +43,7 @@ function ChapterTitle($num, $label)
     // Background color
     $this->SetFillColor(200,220,255);
     // Title
-    $this->Cell(0,6,"Chapter $num : $label",0,1,'L',true);
+    $this->Cell(0,6,"SAMPLE LEASE OR RENTAL AGREEMENT",0,1,'L',true);
     // Line break
     $this->Ln(4);
 }
@@ -60,7 +60,7 @@ function ChapterBody($file)
     $this->Ln();
     // Mention in italics
     $this->SetFont('','I');
-    $this->Cell(0,5,'(end of excerpt)');
+    $this->Cell(0,5,'(end of agreement)');
 }
 
 function PrintChapter($num, $title, $file)
@@ -72,10 +72,9 @@ function PrintChapter($num, $title, $file)
 }
 
 $pdf = new PDF();
-$title = '20000 Leagues Under the Seas';
+$title = 'AGREEMENT';
 $pdf->SetTitle($title);
-$pdf->SetAuthor('Jules Verne');
-$pdf->PrintChapter(1,'A RUNAWAY REEF','20k_c1.txt');
-$pdf->PrintChapter(2,'THE PROS AND CONS','20k_c2.txt');
+$pdf->SetAuthor('Alrais Labs');
+$pdf->PrintChapter(1,'A','text.txt');
 $pdf->Output();
 ?>
