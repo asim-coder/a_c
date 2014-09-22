@@ -1,7 +1,8 @@
 <?php
-if(isset($_POST["submit"]))
+if(1 == 1)
 {
-$company = $_POST["company"];
+$landlord = $_POST["landlord"];
+echo $landlord;
 $address = $_POST["address"];
 $email = $_POST["email"];
 $telephone = $_POST["telephone"];
@@ -71,7 +72,7 @@ $pdf->AliasNbPages();
 $pdf->AddPage();
 $pdf->SetFont('Times','',12);
 $pdf->SetTextColor(32);
-$pdf->Cell(0,5,$company,0,1,'R');
+$pdf->Cell(0,5,$landlord,0,1,'R');
 $pdf->Cell(0,5,$address,0,1,'R');
 $pdf->Cell(0,5,$email,0,1,'R');
 $pdf->Cell(0,5,'Tel: '.$telephone,0,1,'R');
@@ -195,7 +196,7 @@ margin-top:10px;
 <div id="body">
 <form action="" method="post" enctype="multipart/form-data">
 <div id="body_l">
-<div id="name"><input name="company" placeholder="Insert here your Company Name" type="text" /></div>
+<div id="name"><input name="landlord" placeholder="landlord" type="text" /></div>
 <div id="name"><input name="address" placeholder="Insert here your Company Address" type="text" /></div>
 <div id="name"><input name="email" placeholder="Insert here your Email" type="text" /></div>
 <div id="name"><input name="telephone" placeholder="Insert here your telephone number" type="text" /></div>
@@ -213,10 +214,10 @@ margin-top:10px;
 <div id="up" align="center"><input name="file" disabled="disabled" type="file" /></div>
 <div id="up" align="center"><input name="submit" style="margin-top:60px;" value="Create your Invoice" type="submit" /><br /><br />
 <?php
-if(isset($_POST["submit"]))
-{
+if(1 == 1)
+{}
 echo'<a href="invoice.pdf">Download your Invoice</a>';
-}
+
 ?>
 </div>
 </form>

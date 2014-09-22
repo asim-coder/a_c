@@ -1,22 +1,87 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>TinyAjax - Simple AJAX Function</title>
-<link rel="stylesheet" type="text/css" href="style.css" />
-<script type="text/javascript" src="tinyajax.js"></script>
-</head>
-<body>
-<div id="wrapper">
-	<div id="output">
-		<div id="content"></div>
-		<div class="close" onclick="hide()">X</div>
-	</div>
-	<div id="buttons">
-		<div class="button" onclick="TINY.ajax.call('get.php?id=32', 'content', 'display(\'red\')')">Get Data</div>
-		<div class="button floatright" onclick="TINY.ajax.call('post.php', 'content', 'display(\'green\')', 'id=32')">Post Data</div>
-	</div>
-	<p>For more information visit <a href="http://www.leigeber.com">leigeber.com</a>.</p>
-</div>
-</body>
-</html>
+    <!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.css" />
+        <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>        
+        <meta name="msapplication-tap-highlight" content="no" />
+        <title>Title</title>
+    </head>
+    <body>
+        <div class="topcoat-navigation-bar">
+            <div class="topcoat-navigation-bar__item center full">
+            <h1 class="topcoat-navigation-bar__title">Make Agreement</h1>
+            </div>
+        </div>
+        <div class = "content text-input">
+        <form id = "form" name = "form" action="http://localhost/index.php" method = "post">
+            <p>Please fill the details.
+            <p>Landlord Name</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "landlord" name= "landlord">
+            <p>Tenant Name</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "tenant">
+            <p>Location</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "location">
+            <p>Month</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Year</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <hr>
+            <p>Property Details</p>
+            <p>Number</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Street</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>City</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <hr>
+            <p>Term Details</p>
+            <p>Begins on</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Ends On</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Paying Amount</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Date of pay</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Utilities offering by landlord</p>
+            <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
+            <br>
+            <p>Deposit acknowledged</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Name</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Name</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Name</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <p>Name</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <br><p></p>
+            <input id = "submit" name="submit" type="submit" class="topcoat-button" value = "Create Agreement">
+        </form>
+        <!-- <iframe id="some_name" name="some_name" style="display:none position:absulote; z-index:-100"></iframe> -->
+        </div>
+
+        <script type="text/javascript">
+            var frm = $('#form');
+            frm.submit(function (ev) {
+		ev.preventDefault();
+                alert("Hai" + frm.attr('method') +frm.attr('action') + frm.serialize());
+                $.ajax({
+                type: frm.attr('method'),
+                url: frm.attr('action'),
+                data: frm.serialize(),
+                success: function (data) {
+                    alert('ok');
+                }
+		
+            });
+        });
+        </script>
+    </body>
+    </html>
