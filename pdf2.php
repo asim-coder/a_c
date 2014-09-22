@@ -1,4 +1,20 @@
 <?php
+
+$landlord = $_POST["landlord"];
+$tenant = $_POST["tenant"];
+$location = $_POST["location"];
+$month = $_POST["month"];
+$year = $_POST["year"];
+$pr_no = $_POST["pr_no"];
+$pr_str = $_POST["pr_str"];
+$pr_city = $_POST["pr_city"];
+$term_beg = $_POST["term_beg"];
+$term_ends = $_POST["term_ends"];
+$term_amt = $_POST["term_amt"];
+$term_due = $_POST["term_due"];
+$landlord = "Hai";
+
+
 require('fpdf/fpdf.php');
 
 class PDF extends FPDF
@@ -60,7 +76,7 @@ function ChapterBody($file)
     $this->Ln();
     // Mention in italics
     $this->SetFont('','I');
-    $this->Cell(0,5,'(end of agreement)');
+    $this->Cell(0,5,'(end of agreement) ',0,1);
 }
 
 function PrintChapter($num, $title, $file)
@@ -75,6 +91,10 @@ $pdf = new PDF();
 $title = 'AGREEMENT';
 $pdf->SetTitle($title);
 $pdf->SetAuthor('Alrais Labs');
-$pdf->PrintChapter(1,'A','text.txt');
-$pdf->Output();
+$pdf->PrintChapter(1,$title,'text.txt');
+$pdf->Cell(0,5,$landlord,0,1);
+
+$filename="agreement.pdf";
+$pdf->Output($filename, 'F');
+echo'<a href="agreement.pdf">Download your agreement</a>';
 ?>

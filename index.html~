@@ -14,11 +14,11 @@
     <body>
         <div class="topcoat-navigation-bar">
             <div class="topcoat-navigation-bar__item center full">
-            <h1 class="topcoat-navigation-bar__title">Header</h1>
+            <h1 class="topcoat-navigation-bar__title">Make Agreement</h1>
             </div>
         </div>
         <div class = "content text-input">
-        <form id = "form" name = "form" action="http://localhost/index.php" method = "post">
+        <form id = "form" name = "form" action="http://localhost/pdf2.php" method = "post">
             <p>Please fill the details.
             <p>Landlord Name</p>
             <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "landlord" name= "landlord">
@@ -27,40 +27,40 @@
             <p>Location</p>
             <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "location">
             <p>Month</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "month">
             <p>Year</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "year">
             <hr>
             <p>Property Details</p>
             <p>Number</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value=""  id = "pr_no">
             <p>Street</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "pr_str">
             <p>City</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "city">
             <hr>
             <p>Term Details</p>
             <p>Begins on</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_beg">
             <p>Ends On</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_ends">
             <p>Paying Amount</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_amt">
             <p>Date of pay</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_due">
             <p>Utilities offering by landlord</p>
-            <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea"></textarea>
+            <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" id = "utilities"></textarea>
             <br>
             <p>Deposit acknowledged</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "depo">
             <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
             <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
             <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
             <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
             <br><p></p>
             <input id = "submit" name="submit" type="submit" class="topcoat-button" value = "Create Agreement">
         </form>
