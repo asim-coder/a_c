@@ -14,6 +14,21 @@ $term_amt = $_POST["term_amt"];
 $term_due = $_POST["term_due"];
 $landlord = "Hai";
 
+/*
+
+Variables;
+$landlord;
+$tenant ;
+$location;
+$month;
+$year;
+$pr_no;
+$pr_str;
+$pr_city;
+$term_beg;
+$term_ends;
+$term_amt;
+$term_due;*/
 
 require('fpdf/fpdf.php');
 
@@ -72,7 +87,11 @@ function ChapterBody($file)
     $this->SetFont('Times','',12);
     // Output justified text
     $this->MultiCell(0,5,$txt);
-    // Line break
+}
+
+function ChapterEnd()
+{
+        // Line break
     $this->Ln();
     // Mention in italics
     $this->SetFont('','I');
@@ -84,6 +103,7 @@ function PrintChapter($num, $title, $file)
     $this->AddPage();
     $this->ChapterTitle($num,$title);
     $this->ChapterBody($file);
+    $this->ChapterEnd();
 }
 }
 
@@ -93,6 +113,8 @@ $pdf->SetTitle($title);
 $pdf->SetAuthor('Alrais Labs');
 $pdf->PrintChapter(1,$title,'text.txt');
 $pdf->Cell(0,5,$landlord,0,1);
+// $pdf->SetXY(50,80);
+$pdf->Write(5,'Congratulations! You have generated a PDF.'.$landlord);
 
 $filename="agreement.pdf";
 $pdf->Output($filename, 'F');
