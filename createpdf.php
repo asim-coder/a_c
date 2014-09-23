@@ -242,7 +242,7 @@ LANDLORD                                                    TENANT
 
 _________________________                                   _________________________
     
-Signature                                                   Signature 
+Signature                                                       Signature 
 
 Name _________________________                              Name _________________________
 
