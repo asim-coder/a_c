@@ -1,5 +1,0 @@
-<?php
-echo "Hai " . $landlord;
-$landlord = $_POST['id'];
-echo "You posted ID " . $_POST['id'] . ".";
-?>

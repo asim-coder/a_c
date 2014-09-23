@@ -1,4 +1,16 @@
 .text-input {
 	padding-left: 10px;
 	padding-right: 5px;
+	margin-bottom: 30px;
+	margin-top: 20px;
 }
+#myDiv {
+	padding-top: 15px;
+	padding-bottom: 30px;
+}
+
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
