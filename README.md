@@ -1,6 +1,8 @@
 a_c
 ===
 
+<NOTE : PLEASE FIND THE NEW BRANCH V0.2 at https://github.com/asim-coder/a_c/tree/v0.2 >
+
 the code of agreement creator
 
 
@@ -11,10 +13,10 @@ To deploy the app :
 
 1. setup the local server and put these files and folders in localhost.
 2.simply run index.html from your browser,give user inputs.
-3.Now run pdf2.php click download agreement. 
+3.Submit the form.
+4.Download created pdf using the link at the bottom (Download Agreement button.)
 
-Now the app is not fully functional but agreement can customize itself according to inputs.
+App is functional now.
 
-There are some unwanted files and folders which i did for development.I will clean it soon!
 
 
