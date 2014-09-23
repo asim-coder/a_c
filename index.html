@@ -7,7 +7,9 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/topcoat-mobile-light.css" />
         <link rel="stylesheet" type="text/css" href="css/styles.css" />
-    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>        
+    <!-- <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>        
+         -->    
+        <script src="js/jquery.js"></script>
         <meta name="msapplication-tap-highlight" content="no" />
         <title>Title</title>
     </head>
@@ -18,68 +20,67 @@
             </div>
         </div>
         <div class = "content text-input">
-        <form id = "form" name = "form" action="http://localhost/pdf2.php" method = "post">
+            <form id = "form" name = "form" action="createpdf.php" method = "post">
             <p>Please fill the details.
             <p>Landlord Name</p>
             <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "landlord" name= "landlord">
             <p>Tenant Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "tenant">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "tenant" name = "tenant">
             <p>Location</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "location">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "location" name = "location">
+            <p>Day</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "day" id = "day">
             <p>Month</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "month">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "month" id = "month">
             <p>Year</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "year">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "year" id = "year">
             <hr>
             <p>Property Details</p>
             <p>Number</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value=""  id = "pr_no">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "pr_no"  id = "pr_no">
+            <p>Location</p>
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "pr_location"  id = "pr_location">
             <p>Street</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "pr_str">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "pr_str" id = "pr_str">
             <p>City</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "pr_city">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "pr_city" id = "pr_city">
             <hr>
             <p>Term Details</p>
             <p>Begins on</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_beg">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "term_beg" id = "term_beg">
             <p>Ends On</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_ends">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "term_ends" id = "term_ends">
             <p>Paying Amount</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_amt">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "term_amt" id = "term_amt">
             <p>Date of pay</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "term_due">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "term_due" id = "term_due">
             <p>Utilities offering by landlord</p>
-            <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" id = "utilities"></textarea>
+            <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" name = "utilities" id = "utilities"></textarea>
+            <p>furniture and appliances</p>
+            <textarea class="topcoat-textarea" rows="6" cols="36" placeholder="Textarea" name = "furniture" id = "furniture"></textarea>
             <br>
             <p>Deposit acknowledged</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "depo">
-            <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
-            <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
-            <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
-            <p>Name</p>
-            <input type="text" class="topcoat-text-input" placeholder="text" value="" id = "">
+            <input type="text" class="topcoat-text-input" placeholder="text" value="" name = "deposit" id = "deposit">
             <br><p></p>
-            <input id = "submit" name="submit" type="submit" class="topcoat-button" value = "Create Agreement">
-        </form>
-        <!-- <iframe id="some_name" name="some_name" style="display:none position:absulote; z-index:-100"></iframe> -->
+            <button id = "submit" name="submit" type="submit" class="topcoat-button" value = "Create Agreement">Create Agreement</button>
+            </form>
+            <div id="myDiv"></div>
         </div>
-
+ 
         <script type="text/javascript">
             var frm = $('#form');
             frm.submit(function (ev) {
-		ev.preventDefault();
-                alert("Hai" + frm.attr('method') +frm.attr('action') + frm.serialize());
+        ev.preventDefault();
+                //alert("Hai" + frm.attr('method') +frm.attr('action') + frm.serialize());
                 $.ajax({
                 type: frm.attr('method'),
                 url: frm.attr('action'),
                 data: frm.serialize(),
                 success: function (data) {
-                    alert('ok');
+                    alert('Download your agreement in pdf form at the end of the page.');
+                    document.getElementById("myDiv").innerHTML="<a href='agreement.pdf' class = 'topcoat-button'>Download Agreement</a>";
                 }
-		
+        
             });
         });
         </script>
